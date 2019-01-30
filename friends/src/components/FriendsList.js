@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { addNewFriend } from '../actions';
 
 class FriendsList extends React.Component{
-    constructor(){
-        super();
+    state = {
+        newFriend: ''
     }
 
     handleChanges = e => {
@@ -12,6 +13,7 @@ class FriendsList extends React.Component{
 
     addFriend = e => {
         e.preventDefault();
+        this.props.addNewFriend(this.state.newFriend);
     }
 
     render(){
@@ -19,17 +21,21 @@ class FriendsList extends React.Component{
             <>
             <h1>These Are My Friends, My Only Friends</h1>
             <div>
-                {this.props.friends.map(friend => {
-                    {friend.name}
-                })}
+            <h2>Oops No One Is Here</h2>
             </div>
+            <input 
+            type="text"
+            value={this.state.newFriend}
+            onChange={this.handleChanges}
+            />
+            <button>Add A Friend Here</button>
             </>
         );
     }
 }
 
 const mapStateToProps = state => ({
-    friends: state.friendReducer.friends
+    friends: state.friendsReducer.friends
 });
 
 export default connect(
