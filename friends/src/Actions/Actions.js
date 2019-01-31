@@ -14,7 +14,7 @@ export const getFriend = () => dispatch => {
     .catch(err => dispatch({ type:FRIEND_FAILURE, payload: err }));
 };
 
-export const addFriend = payload => dispatch => {
+export const addNewFriend = payload => dispatch => {
     dispatch({type: FRIEND_ADD })
     axios
     .post("http://localhost:5000/api/friends", payload)
