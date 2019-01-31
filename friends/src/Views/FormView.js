@@ -28,7 +28,7 @@ class FormView extends React.Component {
         })
     }
 
-    addNewFriend = () => {this.props.addFriend(this.state.friend)}
+    addNewFriend = () => {this.props.addNewFriend(this.state.friend)}
 
     render() {
         return(

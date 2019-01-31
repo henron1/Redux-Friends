@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import FriendsListView from './views/FriendsListView';
+import FriendsListView from './Views/FriendsListView';
 import FormView from './Views/FormView';
 import {Route} from 'react-router';
 

@@ -5,7 +5,7 @@ import {
     FRIEND_ADD,
     FRIEND_ADD_SUCCESS,
     FRIEND_ADD_FAILURE
-} from '../Actions';
+} from '../Actions/Actions';
 
 
 const initialState = {
@@ -20,7 +20,7 @@ const initialState = {
     error: null
   };
 
-export const FriendReducer = (state = initialState, action) => {
+ const friendsReducer = (state = initialState, action) => {
     switch(action.type) {
         case FRIEND_FETCH:
             return{
@@ -66,3 +66,5 @@ export const FriendReducer = (state = initialState, action) => {
             return state;
     }
 }
+
+export default friendsReducer;
