@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import FriendsList from './components/FriendsList';
+import FriendsListView from './views/FriendsListView';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-      <FriendsList />
+      <FriendsListView />
       </div>
     );
   }
