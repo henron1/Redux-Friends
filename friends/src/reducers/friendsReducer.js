@@ -1,7 +1,16 @@
 import { ADD_FRIEND } from '../actions';
 
 const initialState = {
-    friends: []
+    friends: [
+        {
+            name: 'Sadie',
+            bestie: true
+        },
+        {
+            name: 'Molly',
+            bestie: false
+        }
+    ]
 }
 
 export const friendsReducer = (state = initialState, action) => {

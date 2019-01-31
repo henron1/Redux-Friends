@@ -8,7 +8,7 @@ class FriendsList extends React.Component{
     }
 
     handleChanges = e => {
-        this.setState({ [e.target.name]: e.target.value })
+        this.setState({ newFriend: e.target.value })
     }
 
     addFriend = e => {
@@ -21,14 +21,16 @@ class FriendsList extends React.Component{
             <>
             <h1>These Are My Friends, My Only Friends</h1>
             <div>
-            <h2>Oops No One Is Here</h2>
+                {this.props.friends.map(friend => {
+                    return <div>{friend.name}</div> ;
+                })}
             </div>
             <input 
             type="text"
             value={this.state.newFriend}
             onChange={this.handleChanges}
             />
-            <button>Add A Friend Here</button>
+            <button onClick={this.addFriend}>Add A Friend Here</button>
             </>
         );
     }
